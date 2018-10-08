@@ -4,15 +4,15 @@ import QuizQuestionButton from './QuizQuestionButton.js'
 class QuizQuestion extends Component {
     constructor(props) {
       super(props)
-      this.state = {incorrectAswer: false }
+      this.state = {incorrectAnswer: false }
     }
 
     handleClick(buttonText){
       if (buttonText === this.props.quiz_question.answer){
-        this.setState({ incorrectAswer: false })
+        this.setState({ incorrectAnswer: false })
         this.props.showNextQuestionHandler()
       } else {
-        this.setState({ incorrectAswer: true })
+        this.setState({ incorrectAnswer: true })
       }
 
    }
@@ -32,7 +32,7 @@ class QuizQuestion extends Component {
 
          </ul>
        </section>
-        {this.state.incorrectAswer ? <p className='error'> Sorry, thats not
+        {this.state.incorrectAnswer ? <p className='error'> Sorry, thats not
          right</p> : null}
      </main>
       )
